@@ -21,7 +21,12 @@ module Jquery
         html_options = args[2] || {}
 
         # modal class is required!
-        options[:modalClass] += " modal" if options[:modalClass].present?
+        html_options[:modal_options] ||= {}
+        html_options[:modal_options][:modal_class] += " modal" if html_options[:modal_options][:modal_class].present?
+
+        # pass modal option via data attribute
+        html_options[:data] ||= {}
+        html_options[:data][:modal_options] = html_options.delete(:modal_options)
 
         # extend the html_options
         html_options[:rel] = "modal:open"
