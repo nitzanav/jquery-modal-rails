@@ -198,7 +198,7 @@
     $(document).on('click', 'a[rel="modal:close"]', $.modal.close);
     $(document).on('click', 'a[rel="modal:open"]', function(event) {
         event.preventDefault();
-        $(this).modal();
+        $(this).modal($(this).data("modalOptions"));
     });
 
     // Automatically bind links with rel="modal:open:ajaxpost" to
@@ -208,7 +208,7 @@
         event.preventDefault();
 
         // show the dialog
-        $(this).modal();
+        $(this).modal($(this).data("modalOptions"));
 
         // bind the event when the ajax call is completed
         $(this).bind($.modal.AJAX_COMPLETE, function() {
