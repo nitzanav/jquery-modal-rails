@@ -22,7 +22,7 @@ module Jquery
 
         # modal class is required!
         html_options[:modal_options] ||= {}
-        html_options[:modal_options][:modal_class] += " modal" if html_options[:modal_options][:modal_class].present?
+        html_options[:modal_options][:modalClass] += " modal" if html_options[:modal_options][:modalClass].present?
 
         # pass modal option via data attribute
         html_options[:data] ||= {}
