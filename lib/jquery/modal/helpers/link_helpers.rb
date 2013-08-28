@@ -20,6 +20,9 @@ module Jquery
         options      = args[1] || {}
         html_options = args[2] || {}
 
+        # modal class is required!
+        options[:modalClass] += " modal" if options[:modalClass].present?
+
         # extend the html_options
         html_options[:rel] = "modal:open"
         if (html_options.has_key?(:remote))
